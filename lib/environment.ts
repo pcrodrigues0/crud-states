@@ -26,13 +26,13 @@ class Environment {
 
     getDBName(): String {
         if (this.environment === Environments.prod_environment) {
-            return 'db_test_project_prod';
+            return 'db_prod';
         } else if (this.environment === Environments.dev_environment) {
-            return 'db_test_project_dev';
+            return 'db_dev';
         } else if (this.environment === Environments.qa_environment) {
-            return 'db_test_project_qa';
+            return 'db_qa';
         } else {
-            return 'db_test_project_local';
+            return 'db_local';
         }
     }
 }

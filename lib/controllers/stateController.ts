@@ -46,6 +46,16 @@ export class StateController {
         }
     }
 
+    public getAllStates(req: Request, res: Response) {
+        this.stateService.getAllStates((err: any, stateData: Istate) => {
+            if (err) {
+                mongoError(err, res);
+            } else {
+                successResponse('get state SuccessFully', stateData, res);
+            }
+        });
+    }
+
     public updateState(req: Request, res: Response) {
         if (req.params.id &&
           req.body.name ||

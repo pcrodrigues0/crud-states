@@ -1,7 +1,7 @@
 import { Application, Request, Response } from 'express';
 import { StateController } from '../controllers/stateController';
 
-export class TestRoutes {
+export class StateRoutes {
 
     private stateController: StateController = new StateController();
 
@@ -9,6 +9,10 @@ export class TestRoutes {
 
         app.post('/api/states', (req: Request, res: Response) => {
             this.stateController.createState(req, res);
+        });
+
+        app.get('/api/states', (req: Request, res: Response) => {
+            this.stateController.getAllStates(req, res);
         });
 
         app.get('/api/states/:uf', (req: Request, res: Response) => {
