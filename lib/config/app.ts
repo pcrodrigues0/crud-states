@@ -1,4 +1,5 @@
 import * as express from "express";
+import * as cors from "cors";
 import * as bodyParser from "body-parser";
 import * as mongoose from 'mongoose';
 import environment from "../environment";
@@ -17,6 +18,7 @@ class App {
 
    constructor() {
       this.app = express();
+      this.app.use(cors());
       this.config();
       this.mongoSetup();
       this.StateRoutes.route(this.app);
